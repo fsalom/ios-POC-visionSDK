@@ -8,17 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		C19A5EBC2BB073930098AB46 /* visionSDKApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5EBB2BB073930098AB46 /* visionSDKApp.swift */; };
-		C19A5EBE2BB073930098AB46 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5EBD2BB073930098AB46 /* ContentView.swift */; };
+		C19A5EBE2BB073930098AB46 /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5EBD2BB073930098AB46 /* ScannerView.swift */; };
 		C19A5EC02BB073950098AB46 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C19A5EBF2BB073950098AB46 /* Assets.xcassets */; };
 		C19A5EC32BB073950098AB46 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C19A5EC22BB073950098AB46 /* Preview Assets.xcassets */; };
+		C19A5ECB2BB074430098AB46 /* VisionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5ECA2BB074430098AB46 /* VisionManager.swift */; };
+		C19A5ECD2BB08DFD0098AB46 /* DocumentScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5ECC2BB08DFD0098AB46 /* DocumentScanner.swift */; };
+		C19A5ED12BB1641D0098AB46 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19A5ED02BB1641D0098AB46 /* ScannerViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C19A5EB82BB073930098AB46 /* visionSDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = visionSDK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19A5EBB2BB073930098AB46 /* visionSDKApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visionSDKApp.swift; sourceTree = "<group>"; };
-		C19A5EBD2BB073930098AB46 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C19A5EBD2BB073930098AB46 /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
 		C19A5EBF2BB073950098AB46 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C19A5EC22BB073950098AB46 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C19A5ECA2BB074430098AB46 /* VisionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionManager.swift; sourceTree = "<group>"; };
+		C19A5ECC2BB08DFD0098AB46 /* DocumentScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentScanner.swift; sourceTree = "<group>"; };
+		C19A5ECE2BB08EE00098AB46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C19A5ED02BB1641D0098AB46 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +58,10 @@
 		C19A5EBA2BB073930098AB46 /* visionSDK */ = {
 			isa = PBXGroup;
 			children = (
-				C19A5EBB2BB073930098AB46 /* visionSDKApp.swift */,
-				C19A5EBD2BB073930098AB46 /* ContentView.swift */,
-				C19A5EBF2BB073950098AB46 /* Assets.xcassets */,
+				C19A5ED72BB1DE5E0098AB46 /* manager */,
+				C19A5ED62BB1DE400098AB46 /* resources */,
+				C19A5ED22BB1DE0C0098AB46 /* presentation */,
+				C19A5ECE2BB08EE00098AB46 /* Info.plist */,
 				C19A5EC12BB073950098AB46 /* Preview Content */,
 			);
 			path = visionSDK;
@@ -65,6 +73,73 @@
 				C19A5EC22BB073950098AB46 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C19A5EC92BB074370098AB46 /* vision */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5ECA2BB074430098AB46 /* VisionManager.swift */,
+			);
+			path = vision;
+			sourceTree = "<group>";
+		};
+		C19A5ECF2BB163EB0098AB46 /* scanner */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5EBD2BB073930098AB46 /* ScannerView.swift */,
+				C19A5ED02BB1641D0098AB46 /* ScannerViewModel.swift */,
+			);
+			path = scanner;
+			sourceTree = "<group>";
+		};
+		C19A5ED22BB1DE0C0098AB46 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5ED42BB1DE160098AB46 /* module */,
+				C19A5ED32BB1DE120098AB46 /* app */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		C19A5ED32BB1DE120098AB46 /* app */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5EBB2BB073930098AB46 /* visionSDKApp.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		C19A5ED42BB1DE160098AB46 /* module */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5ED52BB1DE270098AB46 /* documentCamera */,
+				C19A5ECF2BB163EB0098AB46 /* scanner */,
+			);
+			path = module;
+			sourceTree = "<group>";
+		};
+		C19A5ED52BB1DE270098AB46 /* documentCamera */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5ECC2BB08DFD0098AB46 /* DocumentScanner.swift */,
+			);
+			path = documentCamera;
+			sourceTree = "<group>";
+		};
+		C19A5ED62BB1DE400098AB46 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5EBF2BB073950098AB46 /* Assets.xcassets */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		C19A5ED72BB1DE5E0098AB46 /* manager */ = {
+			isa = PBXGroup;
+			children = (
+				C19A5EC92BB074370098AB46 /* vision */,
+			);
+			path = manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +212,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C19A5EBE2BB073930098AB46 /* ContentView.swift in Sources */,
+				C19A5ED12BB1641D0098AB46 /* ScannerViewModel.swift in Sources */,
+				C19A5ECB2BB074430098AB46 /* VisionManager.swift in Sources */,
+				C19A5ECD2BB08DFD0098AB46 /* DocumentScanner.swift in Sources */,
+				C19A5EBE2BB073930098AB46 /* ScannerView.swift in Sources */,
 				C19A5EBC2BB073930098AB46 /* visionSDKApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +353,8 @@
 				DEVELOPMENT_TEAM = 3BJD5A7BSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = visionSDK/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Esta app necesita acceso a la camara para escanera documentos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +384,8 @@
 				DEVELOPMENT_TEAM = 3BJD5A7BSQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = visionSDK/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Esta app necesita acceso a la camara para escanera documentos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
