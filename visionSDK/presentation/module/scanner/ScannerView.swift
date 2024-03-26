@@ -11,32 +11,29 @@ import VisionKit
 struct ScannerView: View {
     @ObservedObject var viewModel: ScannerViewModel = ScannerViewModel()
     @State var showingSheet = false
+    @State var selectedText = "elige un label"
 
     var body: some View {
         VStack {
             if viewModel.image != nil {
+                Text(selectedText)
                 Image(uiImage: viewModel.image!)
                     .resizable()
                     .scaledToFit()
                     .overlay(
-                        GeometryReader { geometry in
-                            ForEach(viewModel.observations, id: \.self) { observation in
-                                //if let observation {
+                        GeometryReader { reader in
+                            ForEach(viewModel.observations) { observation in
                                 Path { path in
-                                    path.move(to: observation.boundingBox * geometry.size.width)
-                                    path.addLine(to: CGPoint(x: 100, y: 300))
-                                    path.addLine(to: CGPoint(x: 300, y: 300))
-                                    path.addLine(to: CGPoint(x: 200, y: 100))
+                                    path.move(to: viewModel.calculatePosition(for: observation.box.topLeft, and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.topRight, and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.bottomRight, and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.bottomLeft, and: reader))
                                 }
                                 .fill(.blue)
-                                    Rectangle()
-                                        .path(in: CGRect(
-                                            x: observation.boundingBox.minX * geometry.size.width,
-                                            y: observation.boundingBox.minY * geometry.size.height,
-                                            width: observation.boundingBox.width * geometry.size.width,
-                                            height: observation.boundingBox.height * geometry.size.height))
-                                        .stroke(Color.red, lineWidth: 2.0)
-                                //}
+                                .opacity(0.3)
+                                .onTapGesture {
+                                    selectedText = observation.text
+                                }
                             }
                         }
                     )
