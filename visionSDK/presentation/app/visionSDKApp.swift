@@ -11,7 +11,7 @@ import SwiftUI
 struct visionSDKApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ScannerView()
         }
     }
 }
