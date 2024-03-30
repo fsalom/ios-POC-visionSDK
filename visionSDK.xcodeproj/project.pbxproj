@@ -58,10 +58,10 @@
 		C19A5EBA2BB073930098AB46 /* visionSDK */ = {
 			isa = PBXGroup;
 			children = (
+				C19A5ECE2BB08EE00098AB46 /* Info.plist */,
 				C19A5ED72BB1DE5E0098AB46 /* manager */,
 				C19A5ED62BB1DE400098AB46 /* resources */,
 				C19A5ED22BB1DE0C0098AB46 /* presentation */,
-				C19A5ECE2BB08EE00098AB46 /* Info.plist */,
 				C19A5EC12BB073950098AB46 /* Preview Content */,
 			);
 			path = visionSDK;
@@ -112,18 +112,18 @@
 		C19A5ED42BB1DE160098AB46 /* module */ = {
 			isa = PBXGroup;
 			children = (
-				C19A5ED52BB1DE270098AB46 /* documentCamera */,
+				C19A5ED52BB1DE270098AB46 /* documentScanner */,
 				C19A5ECF2BB163EB0098AB46 /* scanner */,
 			);
 			path = module;
 			sourceTree = "<group>";
 		};
-		C19A5ED52BB1DE270098AB46 /* documentCamera */ = {
+		C19A5ED52BB1DE270098AB46 /* documentScanner */ = {
 			isa = PBXGroup;
 			children = (
 				C19A5ECC2BB08DFD0098AB46 /* DocumentScanner.swift */,
 			);
-			path = documentCamera;
+			path = documentScanner;
 			sourceTree = "<group>";
 		};
 		C19A5ED62BB1DE400098AB46 /* resources */ = {

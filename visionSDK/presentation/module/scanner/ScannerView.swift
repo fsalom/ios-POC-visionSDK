@@ -24,10 +24,18 @@ struct ScannerView: View {
                         GeometryReader { reader in
                             ForEach(viewModel.observations) { observation in
                                 Path { path in
-                                    path.move(to: viewModel.calculatePosition(for: observation.box.topLeft, and: reader))
-                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.topRight, and: reader))
-                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.bottomRight, and: reader))
-                                    path.addLine(to: viewModel.calculatePosition(for: observation.box.bottomLeft, and: reader))
+                                    path.move(to: viewModel.calculatePosition(
+                                        for: observation.box.topLeft,
+                                        and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(
+                                        for: observation.box.topRight,
+                                        and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(
+                                        for: observation.box.bottomRight,
+                                        and: reader))
+                                    path.addLine(to: viewModel.calculatePosition(
+                                        for: observation.box.bottomLeft,
+                                        and: reader))
                                 }
                                 .fill(.blue)
                                 .opacity(0.3)
