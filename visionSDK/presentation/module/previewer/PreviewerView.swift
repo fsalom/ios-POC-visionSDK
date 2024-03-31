@@ -62,5 +62,5 @@ struct PreviewerView: View {
 }
 
 #Preview {
-    ScannerView(viewModel: PreviewerViewModel())
+    PreviewerView(viewModel: PreviewerViewModel())
 }
