@@ -13,7 +13,7 @@ class Observation: Identifiable {
     }
 }
 
-class ScannerViewModel: NSObject, ObservableObject {
+class PreviewerViewModel: NSObject, ObservableObject {
     @Published var imageArray: [UIImage] = []
     @Published var errorMessage: String?
     @Published var image: UIImage?
@@ -30,7 +30,7 @@ class ScannerViewModel: NSObject, ObservableObject {
     }
 }
 
-extension ScannerViewModel: VNDocumentCameraViewControllerDelegate {
+extension PreviewerViewModel: VNDocumentCameraViewControllerDelegate {
     func documentCameraViewControllerDidCancel(_ controller: VNDocumentCameraViewController) {
         controller.dismiss(animated: true, completion: nil)
     }

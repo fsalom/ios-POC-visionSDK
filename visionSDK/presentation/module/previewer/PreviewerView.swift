@@ -8,8 +8,8 @@
 import SwiftUI
 import VisionKit
 
-struct ScannerView: View {
-    @ObservedObject var viewModel: ScannerViewModel = ScannerViewModel()
+struct PreviewerView: View {
+    @ObservedObject var viewModel = PreviewerViewModel()
     @State var showingSheet = false
     @State var selectedText = "elige un label"
 
@@ -62,5 +62,5 @@ struct ScannerView: View {
 }
 
 #Preview {
-    ScannerView(viewModel: ScannerViewModel())
+    ScannerView(viewModel: PreviewerViewModel())
 }
